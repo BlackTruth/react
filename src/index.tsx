@@ -3,6 +3,10 @@ import { render } from "react-dom";
 
 import App from "./components/App";
 
+import "./index.scss";
+
+import store from "./store";
+
 const rootEl = document.getElementById("app");
 
-render(<App />, rootEl);
+render(<App userData={store} />, rootEl);

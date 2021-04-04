@@ -2,17 +2,16 @@ body,
 input,
 button,
 textarea {
-  font-family: Arial, serif;
-  font-size: 14px;
   margin: 0;
+  font-size: 14px;
+  font-family: Arial, serif;
 }
 
 body,
 html,
-.wrapper,
 body > div {
-  height: max-content;
   width: 100%;
+  height: max-content;
 }
 
 body,
@@ -44,17 +43,4 @@ $thumb: #90a4ae;
   background-color: $thumb;
   border: 3px solid $scrollbar;
   border-radius: 6px;
-}
-
-.main {
-  background-color: #999;
-
-  &--active {
-    background-color: #0e9;
-  }
-
-  &_letter {
-    background-color: #90a4ae;
-    color: #f22;
-  }
 }
