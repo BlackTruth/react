@@ -1,0 +1,60 @@
+body,
+input,
+button,
+textarea {
+  font-family: Arial, serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+body,
+html,
+.wrapper,
+body > div {
+  height: max-content;
+  width: 100%;
+}
+
+body,
+input {
+  font-size: 16px;
+}
+
+[tabindex] {
+  outline: none;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+$scrollbar: #cfd8dc;
+$thumb: #90a4ae;
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $thumb;
+  border: 3px solid $scrollbar;
+  border-radius: 6px;
+}
+
+.main {
+  background-color: #999;
+
+  &--active {
+    background-color: #0e9;
+  }
+
+  &_letter {
+    background-color: #90a4ae;
+    color: #f22;
+  }
+}
