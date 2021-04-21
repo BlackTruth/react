@@ -1,32 +1,32 @@
 import * as React from "react";
-import { Component } from "react";
 
 import ApiSubject from "../../../api/mockedApi";
 import { ICard } from "../../../api/mockedResponse";
 
 import Card from "./Card";
+import CardsCreationForm from "./CardsCreationForm";
 
-export default class CardsContainer extends Component<any, { cards: ICard[] }> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cards: [],
-    };
-  }
+const CardsContainer: React.FC = () => {
+  const [cards, setCards] = React.useState<ICard[]>([]);
 
-  componentDidMount() {
-    ApiSubject.subscribe(this.updateCardsState);
+  React.useEffect(() => {
+    ApiSubject.subscribe(setCards);
     ApiSubject.dispatch();
+    return () => {
+      ApiSubject.unsubscribe(setCards);
+    }
+  }, []);
+
+  const onDelete = (id) => {
+    setCards(cards.filter(({ id: cardId }) => cardId !== id));
   }
 
-  componentWillUnmount() {
-    ApiSubject.unsubscribe(this.updateCardsState);
-  }
+  const onSubmit = ({ gender, title, price, imageUrl }) => {
+    const id = new Date().getTime();
+    setCards([...cards, { id, gender, title, price, imageUrl }]);
+  };
 
-  updateCardsState = (cards: ICard[]) => this.setState({ cards });
-
-  renderCards = () => {
-    const { cards } = this.state;
+  const renderCards = React.useMemo(() => {
     if (!cards || !cards.length) {
       return <div>No cards yet</div>;
     }
@@ -39,13 +39,16 @@ export default class CardsContainer extends Component<any, { cards: ICard[] }> {
           title={title}
           price={price}
           imageUrl={imageUrl}
+          onDelete={onDelete}
         />
       );
     });
-  };
+  }, [cards]);
 
-  render() {
-    const { renderCards } = this;
-    return <div>{renderCards()}</div>;
-  }
+  return (<div>
+    <CardsCreationForm onSubmit={onSubmit} />
+    {renderCards}
+  </div>);
 }
+
+export default CardsContainer;

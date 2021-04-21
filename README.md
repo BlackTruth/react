@@ -108,3 +108,25 @@ Note: `<CardsContainer />` is a class component and it should have state and pro
  ![files](docs/hw_2/img_5.png)
 
 7) ___If there is no cards yet render a fallback JSX___ like `<div>No cards yet</div>`
+
+# React Task 3 
+
+## deadline: 23.04 
+
+ 
+
+### Summary 
+
+Based on your 2nd task, make an additional opportunity to create and delete cards (for cards I mean any array of objects with image and description, for example const cards = [{ id:1, category: ‘male’, imgUrl: ‘’, price: 100 }]). 
+
+ 
+
+### Requirements 
+
+- Each `<Card />` component could be deleted from catalogue by clicking on the cross button (❌) which can be placed somewhere on the top of each card. After clicking on the button the array of cards in your `<CardsContainer />` should be updated. 
+
+- `<CardsContainer />` component should also additionaly render `<CardsCreationForm />` as its children. This form should contain all the required inputs for creating the card (find a way on how to use only 1 handler for all the inputs) and a submit button. By clicking on a submit button the array of cards in your `<CardsContainer />` should be updated with the new card data. 
+
+- All the required handlers for creating/deleting cards should be in the `<CardsContainer />` component and passed down to a child components as a __*props*__. 
+
+- Rewrite all classes components to functional components with hooks 
