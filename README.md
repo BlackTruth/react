@@ -130,3 +130,30 @@ Based on your 2nd task, make an additional opportunity to create and delete card
 - All the required handlers for creating/deleting cards should be in the `<CardsContainer />` component and passed down to a child components as a __*props*__. 
 
 - Rewrite all classes components to functional components with hooks 
+
+#React task 4
+
+##Deadline: 3.05
+
+
+
+###Summary: 
+implement a validation for the `<CardCreationForm />` (the form which is used to create a new <Card /> component).
+
+
+
+###Main task: 
+if the user left one of the required inputs empty -> display an error message like `‘this field is required’` under it (design of the error message is up to you). The user should not be able to add a new card until all the required fields are filled.
+
+
+
+###Optional task:  
+in addition to display the error message you can also scroll to the invalid input, for this you can:
+
+- use React.createRef() to capture the DOM Nodes of the inputs.
+
+- use HTML scroll api https://developer.mozilla.org/ru/docs/Web/API/Element/scrollIntoView
+
+
+
+__Note:__  the scroll API might not work as you expect (it depends on the position of your form), so if the form is placed at the bottom of the page there will be no visual ‘scrolling’ effect. __The main idea of the task is to validate your form.__ 
