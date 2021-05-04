@@ -157,3 +157,32 @@ in addition to display the error message you can also scroll to the invalid inpu
 
 
 __Note:__  the scroll API might not work as you expect (it depends on the position of your form), so if the form is placed at the bottom of the page there will be no visual ‘scrolling’ effect. __The main idea of the task is to validate your form.__ 
+
+
+# React task 5
+
+
+
+## deadline: 12.05
+
+
+
+### Summary
+
+### Based on your previous tasks, add 3 routes to your application: login page(/login), your profile page(/pofile), and your page with cards(/cards).
+
+
+
+### Requirements
+
+- Your app should redirect the user to a login page (/login). You can do it using the history API from react-router. On this login page create a form with 2 inputs (username and password) with a submit button (use mocked logic for login).
+
+- If the user successfully logged in, he can be able to view the profile(/profile) page and cards(/cards) page
+
+- Profile page contains any data you like. (Add 2-3 sentences about yourself)
+
+- Cards page should contain your `<CardsContainer />` component with all the logic you’ve done before (no additional code required)
+
+
+
+###Important note: if the user in not logged in he should NOT able to view /profile and /cards pages 

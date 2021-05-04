@@ -1,9 +1,18 @@
-import { ICard, mockedResponce } from "./mockedResponse";
+import { ICard, IToken, mockedToken, mockedResponce } from "./mockedResponse";
 
 export const mockedApiCall = async (): Promise<ICard[]> => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(mockedResponce); 
+            resolve(mockedResponce);
+        }, 500);
+    });
+
+}
+
+export const mockedLoginCall = async (): Promise<IToken> => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(mockedToken);
         }, 500);
     });
 
@@ -27,5 +36,5 @@ class ApiSubject {
     }
 }
 
+export const LoginSubject = new ApiSubject();
 export default new ApiSubject();
-

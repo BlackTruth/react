@@ -14,12 +14,12 @@ const CardsContainer: React.FC = () => {
     ApiSubject.dispatch();
     return () => {
       ApiSubject.unsubscribe(setCards);
-    }
+    };
   }, []);
 
   const onDelete = (id) => {
     setCards(cards.filter(({ id: cardId }) => cardId !== id));
-  }
+  };
 
   const onSubmit = ({ gender, title, price, imageUrl }) => {
     const id = new Date().getTime();
@@ -45,10 +45,12 @@ const CardsContainer: React.FC = () => {
     });
   }, [cards]);
 
-  return (<div>
-    <CardsCreationForm onSubmit={onSubmit} />
-    {renderCards}
-  </div>);
-}
+  return (
+    <div>
+      <CardsCreationForm onSubmit={onSubmit} />
+      {renderCards}
+    </div>
+  );
+};
 
 export default CardsContainer;

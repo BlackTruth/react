@@ -9,4 +9,4 @@ import store from "./store";
 
 const rootEl = document.getElementById("app");
 
-render(<App userData={store} />, rootEl);
+render(<App store={store} />, rootEl);

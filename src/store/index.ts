@@ -1,4 +1,4 @@
-const store = {
+const store: any = {
   user: {
     firstName: "Kanstantsin",
     lastName: "Kulahin",
@@ -9,7 +9,6 @@ const store = {
     alt: "avatar",
   },
 };
-Object.freeze(store);
 
 export type Store = typeof store;
 export type User = typeof store.user;

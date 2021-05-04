@@ -6,6 +6,11 @@ export interface ICard {
     gender: string;
 }
 
+export const mockedToken = {
+    token: "123",
+}
+export type IToken = typeof mockedToken;
+
 export const mockedResponce: ICard[] = [
     {
         id: 1,
