@@ -1,0 +1,26 @@
+.styled-form {
+  display: flex;
+  padding-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  label {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 200px;
+    padding-bottom: 15px;
+    margin-right: 5px;
+    span:last-child {
+      position: absolute;
+      color: red;
+      font-size: 12px;
+      bottom: 0;
+    }
+  }
+
+}
+
+.submit-button {
+  height: 30px;
+
+}

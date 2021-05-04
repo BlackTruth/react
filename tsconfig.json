@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["es5", "es6", "dom"],
+    "plugins": [{
+      "name": "typescript-plugin-css-modules",
+      "options" : {
+        "classnameTransform": "camelCase"
+      }
+    }]
+  },
+  "include": ["./src/**/*", "api"],
+  "awesomeTypescriptLoaderOptions": {
+    "reportFiles": ["./src/**/*"]
+  },
+  "compileOnSave": true
+}
