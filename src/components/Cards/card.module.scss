@@ -2,3 +2,11 @@
     display: flex;
     justify-content: space-between;
 }
+
+.card > span {
+   width: 100%;
+}
+
+.card > button {
+    width: 25%;
+}
