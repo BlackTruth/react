@@ -30,15 +30,11 @@ export default class CardsContainer extends Component<any, { cards: ICard[] }> {
     if (!cards || !cards.length) {
       return <div>No cards yet</div>;
     }
-    return cards.map(({ gender, id, imageUrl, price, title }) => {
+    return cards.map((card: ICard) => {
       return (
         <Card
-          key={id}
-          id={id}
-          gender={gender}
-          title={title}
-          price={price}
-          imageUrl={imageUrl}
+          key={card.id}
+          card={card}
         />
       );
     });

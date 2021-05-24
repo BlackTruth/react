@@ -2,13 +2,19 @@ import * as React from "react";
 import { ICard } from "../../../api/mockedResponse";
 import styles from "./card.module.scss";
 
-const Card: React.FC<ICard> = ({
-  id,
-  price,
-  title,
-  imageUrl,
-  gender,
-}: ICard) => {
+interface ClicableCard {
+  card: ICard;
+}
+
+const Card: React.FC<ClicableCard> = ({
+   card: {
+    id,
+    price,
+    title,
+    imageUrl,
+    gender,
+   } 
+}: ClicableCard) => {
   return (
     <div className={styles.card}>
       <span>{id}</span>
