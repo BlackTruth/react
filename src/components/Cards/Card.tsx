@@ -4,16 +4,19 @@ import styles from "./card.module.scss";
 
 type HandleDelete = (id) => void;
 
-interface ClicableCard extends ICard {
+interface ClicableCard {
+  card: ICard;
   onDelete: HandleDelete;
 }
 
 const Card: React.FC<ClicableCard> = ({
-  id,
-  price,
-  title,
-  imageUrl,
-  gender,
+  card: {
+    id,
+    price,
+    title,
+    imageUrl,
+    gender,
+  },
   onDelete,
 }: ClicableCard) => {
   return (

@@ -6,6 +6,13 @@ import { ICard } from "../../../api/mockedResponse";
 import Card from "./Card";
 import CardsCreationForm from "./CardsCreationForm";
 
+interface ICardData {
+  gender: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+}
+
 const CardsContainer: React.FC = () => {
   const [cards, setCards] = React.useState<ICard[]>([]);
 
@@ -17,28 +24,24 @@ const CardsContainer: React.FC = () => {
     }
   }, []);
 
-  const onDelete = (id) => {
+  const onDelete = (id: number): void => {
     setCards(cards.filter(({ id: cardId }) => cardId !== id));
   }
 
-  const onSubmit = ({ gender, title, price, imageUrl }) => {
+  const onSubmit = (cardData: ICardData): void => {
     const id = new Date().getTime();
-    setCards([...cards, { id, gender, title, price, imageUrl }]);
+    setCards([...cards, { id, ...cardData }]);
   };
 
   const renderCards = React.useMemo(() => {
     if (!cards || !cards.length) {
       return <div>No cards yet</div>;
     }
-    return cards.map(({ gender, id, imageUrl, price, title }) => {
+    return cards.map((card: ICard) => {
       return (
         <Card
-          key={id}
-          id={id}
-          gender={gender}
-          title={title}
-          price={price}
-          imageUrl={imageUrl}
+          key={card.id}
+          card={card}
           onDelete={onDelete}
         />
       );
