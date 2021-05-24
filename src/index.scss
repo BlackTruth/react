@@ -1,0 +1,46 @@
+body,
+input,
+button,
+textarea {
+  margin: 0;
+  font-size: 14px;
+  font-family: Arial, serif;
+}
+
+body,
+html,
+body > div {
+  width: 100%;
+  height: max-content;
+}
+
+body,
+input {
+  font-size: 16px;
+}
+
+[tabindex] {
+  outline: none;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+$scrollbar: #cfd8dc;
+$thumb: #90a4ae;
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $thumb;
+  border: 3px solid $scrollbar;
+  border-radius: 6px;
+}
