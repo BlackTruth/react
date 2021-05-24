@@ -16,7 +16,7 @@
       }
     }]
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "api"],
   "awesomeTypescriptLoaderOptions": {
     "reportFiles": ["./src/**/*"]
   },

@@ -56,3 +56,55 @@ Here is the diagram which explains basic data flow
 
 
 **You can use yarn or npm. It's your choice**
+
+
+# React task 2 
+
+## Deadline: 16.04 
+
+ 
+
+### Task: 
+Create two additional components and render them in <Main /> component. One component should be written as a class, and should have state and proper lifecycle methods (e.g. <CardsContainer />). This component should fetch the data, update its own state and then map this state to a presentational child component (e.g. <Card />). 
+
+ 
+
+**_Steps which should be covered:_**
+
+1) Create an additional folder in your project’s root directory which will be called __api__. 
+
+This folded should contain 2 files: __mockedResponse.js__, and __mockedApi.js__ 
+
+
+![files](docs/hw_2/img_1.png)
+
+
+2) __mockedResponse.js__ file should just contain one variable, which will be an array of objects (make 6-8 objects with optional fields). For example:
+
+
+![files](docs/hw_2/img_2.png)
+ 
+
+3) the __mockedApi.js__ file contains function, which will return a resolved promise with __mockedResponse__ data 
+
+ ![files](docs/hw_2/img_3.png)
+
+4) in your project’s __‘src’__ folder create an additional folder called __‘components’__ and move all components there (you imports might need to be updated accordingly). 
+
+The result should be something similar
+
+![files](docs/hw_2/img_4.png)
+
+ 
+
+5) In your __components__ folder create an additional folder which will be called __Cards__. 
+
+__This folder should contain 2 files for 2 components: `<CardsContainer/>` and `<Card />` and related CSS-files for each of them.__
+
+Note: `<CardsContainer />` is a class component and it should have state and proper lifecycle methods. `<Card />` component is just a pure functional component which just should accept several props and render them in a simple card with image and description (design of the card is up to you) 
+
+6) `<CardsContainer/>` should fetch the data from our mockedApi and update it’s own state. After it the actual state should be mapped to a `<Card />` component. (don’t forget about key property)  
+
+ ![files](docs/hw_2/img_5.png)
+
+7) ___If there is no cards yet render a fallback JSX___ like `<div>No cards yet</div>`
