@@ -21,12 +21,11 @@ const Card: React.FC<ClicableCard> = ({
 }: ClicableCard) => {
   return (
     <div className={styles.card}>
-      <button onClick={() => onDelete(id)}>X</button>
-      <span>{id}</span>
-      <span>{price}</span>
+      <span>{gender}</span>  
       <span>{title}</span>
-      <span>{imageUrl}</span>
-      <span>{gender}</span>
+      <span>{price}</span>
+      <span>{imageUrl}</span>    
+      <button onClick={() => onDelete(id)}>X</button>
     </div>
   );
 };
